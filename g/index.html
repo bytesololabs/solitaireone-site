@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solitaire One — Play this deal</title>
+    <meta
+      name="description"
+      content="Someone shared a Solitaire One challenge with you. Open it in the app or get Solitaire One free on Google Play."
+    />
+    <meta name="theme-color" content="#0e2319" />
+
+    <!-- Open Graph / iMessage / WhatsApp link previews -->
+    <meta property="og:title" content="A Solitaire One challenge for you" />
+    <meta
+      property="og:description"
+      content="Tap to play this exact Solitaire One deal."
+    />
+    <meta property="og:type" content="website" />
+
+    <style>
+      /* Self-contained styling so the page renders consistently
+         regardless of any future shared stylesheet. */
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        background:
+          radial-gradient(ellipse at top, #163425 0%, #0e2319 55%, #071a12 100%);
+        min-height: 100vh;
+      }
+      .g-hero {
+        max-width: 560px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+        text-align: center;
+        color: #f5f0e1;
+      }
+      .g-tile {
+        width: 96px;
+        height: 96px;
+        border-radius: 18px;
+        background: #c8a84b;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 64px;
+        line-height: 1;
+        color: #1a1a1a;
+        box-shadow: 0 0 36px rgba(229, 185, 78, 0.45);
+      }
+      .g-wordmark {
+        font-size: 38px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        margin: 0 0 6px;
+      }
+      .g-wordmark .one { color: #fff; }
+      .g-wordmark .gold { color: #E5B94E; }
+      .g-subtitle {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: rgba(200, 168, 75, 0.85);
+        text-transform: uppercase;
+        margin: 0 0 32px;
+      }
+      .g-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(229, 185, 78, 0.35);
+        border-radius: 16px;
+        padding: 28px 24px;
+        margin: 0 0 24px;
+      }
+      .g-card h2 {
+        margin: 0 0 8px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .g-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      .g-meta {
+        display: inline-flex;
+        gap: 10px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .g-pill {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #fff;
+      }
+      .g-pill.gift {
+        background: rgba(229, 185, 78, 0.16);
+        border-color: rgba(229, 185, 78, 0.55);
+        color: #E5B94E;
+      }
+      .g-btn {
+        display: block;
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 14px;
+        font-size: 17px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        margin-bottom: 12px;
+        transition: transform 0.05s ease, box-shadow 0.2s ease;
+      }
+      .g-btn.primary {
+        background: #c8a84b;
+        color: #1a1a1a;
+        box-shadow: 0 6px 0 #7a5c16;
+      }
+      .g-btn.primary:active {
+        transform: translateY(2px);
+        box-shadow: 0 4px 0 #7a5c16;
+      }
+      .g-btn.secondary {
+        background: rgba(255, 255, 255, 0.04);
+        color: #E5B94E;
+        border: 1.5px solid rgba(229, 185, 78, 0.55);
+      }
+      .g-footer-note {
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.45);
+        line-height: 1.5;
+      }
+      .g-footer-note a {
+        color: rgba(229, 185, 78, 0.85);
+        text-decoration: none;
+      }
+      .g-token-row {
+        margin-top: 18px;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.35);
+        word-break: break-all;
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      }
+      /* Hide elements that depend on a valid token until JS confirms one. */
+      .needs-token { display: none; }
+      body.has-token .needs-token { display: block; }
+      body.has-token .no-token-only { display: none; }
+    </style>
+  </head>
+  <body>
+    <main class="g-hero">
+      <div class="g-tile" aria-hidden="true">♠</div>
+      <h1 class="g-wordmark">
+        Solitaire <span class="one">One</span>
+      </h1>
+      <p class="g-subtitle">Challenge</p>
+
+      <!-- ── With token: real share landing ────────────────────────── -->
+      <section class="g-card needs-token">
+        <h2>A friend shared a deal with you</h2>
+        <p>
+          Play the exact same Klondike Solitaire deal they did. Same
+          shuffle, same draw mode, same chance to beat their time.
+        </p>
+        <div class="g-meta">
+          <span class="g-pill gift">🎁 Shared deal</span>
+        </div>
+      </section>
+
+      <!-- ── Without token: generic landing ───────────────────────── -->
+      <section class="g-card no-token-only">
+        <h2>Solitaire One</h2>
+        <p>
+          Polished, free Klondike Solitaire for Android — crisp gameplay,
+          unlimited undo, draw 1 / draw 3, solvable deals.
+        </p>
+      </section>
+
+      <a
+        id="g-open"
+        class="g-btn secondary needs-token"
+        href="solitaireone://g"
+      >
+        Open in app
+      </a>
+
+      <!--
+        Play Store CTA. The package name matches the Android app's
+        applicationId.
+      -->
+      <a
+        class="g-btn primary"
+        href="https://play.google.com/store/apps/details?id=com.bytesololabs.solitaireone"
+      >
+        Get Solitaire One on Google Play
+      </a>
+
+      <p class="g-footer-note">
+        Already have the app? Tap <strong>Open in app</strong> above.
+        <br />
+        bytesololabs.com &middot;
+        <a href="https://bytesololabs.com/privacy.html">Privacy</a> &middot;
+        <a href="https://bytesololabs.com/support.html">Support</a>
+      </p>
+
+      <p class="g-token-row needs-token">
+        Deal token: <span id="g-token-display"></span>
+      </p>
+    </main>
+
+    <script>
+      /*
+       * Landing-page JS — kept tiny + dependency-free.
+       *
+       * What it does:
+       *   1. Pulls ?g=<token> from the URL.
+       *   2. If present, rewrites the "Open in app" link to include
+       *      the token so the custom-scheme handler in the app gets
+       *      the full payload (and not just the empty base URL).
+       *   3. Flips the body class so the token-aware copy renders
+       *      instead of the generic copy.
+       *
+       * What it does NOT do:
+       *   • Validate the token. Validation requires the codec's
+       *     internal mask + CRC; shipping that to the web would
+       *     leak it. The app rejects malformed tokens after the
+       *     deep link fires.
+       *   • Auto-redirect into the app. Browsers handle unknown
+       *     schemes inconsistently (Chrome on Android sometimes
+       *     surfaces a chooser, Safari sometimes silently fails),
+       *     so an explicit tap is always required.
+       */
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var token = params.get("g");
+        if (!token) return;
+
+        // Accept current Lehmer-codec tokens (~43 chars) plus a buffer
+        // either side for any future codec tweaks. Anything outside this
+        // range is almost certainly a copy/paste accident; falling back
+        // to the generic landing is safer than sending the user into the
+        // app with garbage.
+        if (!/^[A-Za-z0-9_-]{30,120}$/.test(token)) return;
+
+        document.body.classList.add("has-token");
+
+        // Truncate display so a long token doesn't blow out narrow
+        // viewports. Full token still rides in the link href.
+        var disp = document.getElementById("g-token-display");
+        if (disp) {
+          disp.textContent =
+            token.length > 24 ? token.slice(0, 12) + "…" + token.slice(-8) : token;
+        }
+
+        var open = document.getElementById("g-open");
+        if (open) {
+          open.href = "solitaireone://g?g=" + encodeURIComponent(token);
+        }
+      })();
+    </script>
+  </body>
+</html>

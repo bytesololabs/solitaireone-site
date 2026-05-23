@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solitaire One — Klondike Solitaire for Android</title>
+    <meta
+      name="description"
+      content="Polished, free Klondike Solitaire for Android — crisp gameplay, unlimited undo, draw 1 / draw 3, solvable deals."
+    />
+    <meta name="theme-color" content="#0e2319" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Solitaire One" />
+    <meta
+      property="og:description"
+      content="Polished, free Klondike Solitaire for Android."
+    />
+    <meta property="og:type" content="website" />
+
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        background:
+          radial-gradient(ellipse at top, #163425 0%, #0e2319 55%, #071a12 100%);
+        min-height: 100vh;
+      }
+      .hero {
+        max-width: 560px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+        text-align: center;
+        color: #f5f0e1;
+      }
+      .tile {
+        width: 96px;
+        height: 96px;
+        border-radius: 18px;
+        background: #c8a84b;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 64px;
+        line-height: 1;
+        color: #1a1a1a;
+        box-shadow: 0 0 36px rgba(229, 185, 78, 0.45);
+      }
+      .wordmark {
+        font-size: 38px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        margin: 0 0 6px;
+      }
+      .wordmark .one { color: #fff; }
+      .subtitle {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: rgba(200, 168, 75, 0.85);
+        text-transform: uppercase;
+        margin: 0 0 32px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(229, 185, 78, 0.35);
+        border-radius: 16px;
+        padding: 28px 24px;
+        margin: 0 0 24px;
+        text-align: left;
+      }
+      .card h2 {
+        margin: 0 0 12px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+      }
+      .card ul {
+        margin: 0;
+        padding-left: 22px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 14px;
+        font-size: 17px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        margin-bottom: 12px;
+      }
+      .btn.primary {
+        background: #c8a84b;
+        color: #1a1a1a;
+        box-shadow: 0 6px 0 #7a5c16;
+      }
+      .btn.primary:active {
+        transform: translateY(2px);
+        box-shadow: 0 4px 0 #7a5c16;
+      }
+      .footer-note {
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.45);
+        line-height: 1.5;
+      }
+      .footer-note a {
+        color: rgba(229, 185, 78, 0.85);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero">
+      <div class="tile" aria-hidden="true">♠</div>
+      <h1 class="wordmark">Solitaire <span class="one">One</span></h1>
+      <p class="subtitle">Klondike</p>
+
+      <section class="card">
+        <h2>The classic, done right</h2>
+        <ul>
+          <li>Free, no ads in the way of the game</li>
+          <li>Unlimited undo, hint, and auto-complete</li>
+          <li>Draw 1 and Draw 3 modes</li>
+          <li>Solvable deals option</li>
+          <li>Share a deal with friends</li>
+        </ul>
+      </section>
+
+      <a
+        class="btn primary"
+        href="https://play.google.com/store/apps/details?id=com.bytesololabs.solitaireone"
+      >
+        Get Solitaire One on Google Play
+      </a>
+
+      <p class="footer-note">
+        bytesololabs.com &middot;
+        <a href="https://bytesololabs.com/privacy.html">Privacy</a> &middot;
+        <a href="https://bytesololabs.com/support.html">Support</a>
+      </p>
+    </main>
+  </body>
+</html>

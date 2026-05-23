@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bytesololabs.solitaireone",
+      "sha256_cert_fingerprints": [
+        "09:79:A4:68:88:E5:61:1B:35:46:49:6A:BF:18:89:64:2D:15:74:3C:8D:B9:A2:7F:20:C0:42:98:BA:88:BA:A3"
+      ]
+    }
+  }
+]
