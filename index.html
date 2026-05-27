@@ -18,6 +18,15 @@
     />
     <meta property="og:type" content="website" />
 
+    <!-- Brand fonts — match in-app splash/menu wordmark (Baloo 2 w800)
+         and the KLONDIKE eyebrow (Nunito w800). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@800&display=swap"
+    />
+
     <style>
       * { box-sizing: border-box; }
       html, body {
@@ -40,6 +49,7 @@
         color: #f5f0e1;
       }
       .tile {
+        position: relative;
         width: 96px;
         height: 96px;
         border-radius: 18px;
@@ -48,23 +58,46 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 64px;
-        line-height: 1;
-        color: #1a1a1a;
         box-shadow: 0 0 36px rgba(229, 185, 78, 0.45);
       }
+      .tile svg {
+        width: 86%;
+        height: 86%;
+        color: #1a1208;
+        display: block;
+      }
+      .tile-word {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 56%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-family: "Baloo 2", system-ui, sans-serif;
+        font-weight: 700;
+        font-size: 21px;
+        letter-spacing: 4px;
+        line-height: 1;
+        text-align: center;
+        pointer-events: none;
+      }
       .wordmark {
-        font-size: 38px;
+        font-family: "Baloo 2", system-ui, sans-serif;
+        font-size: 46px;
         font-weight: 800;
         letter-spacing: 0.5px;
+        line-height: 1.0;
         margin: 0 0 6px;
+        text-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
       }
-      .wordmark .one { color: #fff; }
+      .wordmark .gold { color: #E5B94E; }
+      .wordmark .one  { color: #fff; }
       .subtitle {
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 4px;
-        color: rgba(200, 168, 75, 0.85);
+        font-family: "Nunito", system-ui, sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 5px;
+        color: rgba(200, 168, 75, 0.55);
         text-transform: uppercase;
         margin: 0 0 32px;
       }
@@ -124,8 +157,15 @@
   </head>
   <body>
     <main class="hero">
-      <div class="tile" aria-hidden="true">♠</div>
-      <h1 class="wordmark">Solitaire <span class="one">One</span></h1>
+      <div class="tile" aria-label="Solitaire One" role="img">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="currentColor" d="M50 5 C 75 30, 95 50, 95 68 C 95 80, 85 88, 73 88 C 65 88, 58 84, 54 78 L 60 95 L 40 95 L 46 78 C 42 84, 35 88, 27 88 C 15 88, 5 80, 5 68 C 5 50, 25 30, 50 5 Z"/>
+        </svg>
+        <span class="tile-word" aria-hidden="true">one</span>
+      </div>
+      <h1 class="wordmark">
+        <span class="gold">Solitaire</span> <span class="one">One</span>
+      </h1>
       <p class="subtitle">Klondike</p>
 
       <section class="card">
