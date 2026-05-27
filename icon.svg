@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Solitaire One favicon: mirrors the in-app BrandedSpadeGlyph
+       (gold rounded tile + monochrome spade silhouette + white "one"
+       wordmark in the lower lobe). -->
+  <rect width="128" height="128" rx="24" ry="24" fill="#c8a84b"/>
+  <g transform="translate(9 9) scale(1.1)">
+    <path fill="#1a1208"
+          d="M50 5 C 75 30, 95 50, 95 68 C 95 80, 85 88, 73 88
+             C 65 88, 58 84, 54 78 L 60 95 L 40 95 L 46 78
+             C 42 84, 35 88, 27 88 C 15 88, 5 80, 5 68
+             C 5 50, 25 30, 50 5 Z"/>
+  </g>
+  <text x="64" y="82"
+        text-anchor="middle"
+        font-family="'Baloo 2', system-ui, sans-serif"
+        font-weight="700"
+        font-size="22"
+        letter-spacing="3"
+        fill="#ffffff">one</text>
+</svg>
