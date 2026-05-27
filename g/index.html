@@ -31,15 +31,27 @@
       }
       body {
         background:
-          radial-gradient(ellipse at top, #163425 0%, #0e2319 55%, #071a12 100%);
+          radial-gradient(circle at center, #227060 0%, #0a2820 90%);
         min-height: 100vh;
       }
       .g-hero {
         max-width: 560px;
         margin: 0 auto;
-        padding: 56px 24px 80px;
+        padding: 56px 24px 56px;
         text-align: center;
         color: #f5f0e1;
+      }
+      @media (max-width: 380px) {
+        .g-hero { padding: 28px 16px 32px; }
+        .g-tile { width: 80px; height: 80px; font-size: 52px; margin-bottom: 14px; }
+        .g-wordmark { font-size: 32px; }
+        .g-subtitle { margin-bottom: 22px; }
+        .g-card { padding: 22px 18px; margin-bottom: 18px; }
+      }
+      @media (max-height: 640px) {
+        .g-hero { padding-top: 24px; padding-bottom: 28px; }
+        .g-tile { margin-bottom: 12px; }
+        .g-subtitle { margin-bottom: 18px; }
       }
       .g-tile {
         width: 96px;
@@ -52,8 +64,13 @@
         justify-content: center;
         font-size: 64px;
         line-height: 1;
-        color: #1a1a1a;
-        box-shadow: 0 0 36px rgba(229, 185, 78, 0.45);
+        color: #1a1208;
+        box-shadow: 0 0 36px rgba(200, 168, 75, 0.45);
+        /* Force monochrome glyph rendering instead of color emoji on
+           platforms that style ♠ as a colored emoji (iOS Safari, some
+           Android browsers). */
+        font-family: "Times New Roman", "Apple Symbols", serif;
+        font-variant-emoji: text;
       }
       .g-wordmark {
         font-size: 38px;
@@ -148,13 +165,6 @@
         color: rgba(229, 185, 78, 0.85);
         text-decoration: none;
       }
-      .g-token-row {
-        margin-top: 18px;
-        font-size: 11px;
-        color: rgba(255, 255, 255, 0.35);
-        word-break: break-all;
-        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-      }
       /* Hide elements that depend on a valid token until JS confirms one. */
       .needs-token { display: none; }
       body.has-token .needs-token { display: block; }
@@ -216,10 +226,6 @@
         <a href="https://bytesololabs.com/privacy.html">Privacy</a> &middot;
         <a href="https://bytesololabs.com/support.html">Support</a>
       </p>
-
-      <p class="g-token-row needs-token">
-        Deal token: <span id="g-token-display"></span>
-      </p>
     </main>
 
     <script>
@@ -257,14 +263,6 @@
         if (!/^[A-Za-z0-9_-]{30,120}$/.test(token)) return;
 
         document.body.classList.add("has-token");
-
-        // Truncate display so a long token doesn't blow out narrow
-        // viewports. Full token still rides in the link href.
-        var disp = document.getElementById("g-token-display");
-        if (disp) {
-          disp.textContent =
-            token.length > 24 ? token.slice(0, 12) + "…" + token.slice(-8) : token;
-        }
 
         var open = document.getElementById("g-open");
         if (open) {
