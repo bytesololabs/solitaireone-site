@@ -158,6 +158,13 @@
         border-color: rgba(229, 185, 78, 0.55);
         color: #E5B94E;
       }
+      .g-pill .g-pill-icon {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        vertical-align: -2px;
+        margin-right: 2px;
+      }
       .g-btn {
         display: block;
         width: 100%;
@@ -223,7 +230,14 @@
           shuffle, same draw mode, same chance to beat their time.
         </p>
         <div class="g-meta">
-          <span class="g-pill gift">🎁 Shared deal</span>
+          <span class="g-pill gift">
+            <!-- Outlined flag — mirrors Icons.outlined_flag used on the
+                 shared-deal badge in lib/screens/game_history_screen.dart. -->
+            <svg class="g-pill-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="currentColor" d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6zM18 12h-3.6l-.4-2H7V6h5.6l.4 2H18v4z"/>
+            </svg>
+            Shared deal
+          </span>
         </div>
       </section>
 
