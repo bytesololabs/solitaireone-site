@@ -42,8 +42,10 @@
         -webkit-font-smoothing: antialiased;
       }
       body {
+        /* Felt-table green — matches the share-a-deal landing page at /g/
+           so the brand reads consistently across both surfaces. */
         background:
-          radial-gradient(ellipse at top, #163425 0%, #0e2319 55%, #071a12 100%);
+          radial-gradient(circle at center, #227060 0%, #0a2820 90%);
         min-height: 100vh;
       }
       .hero {
@@ -121,6 +123,13 @@
         color: #fff;
         text-align: center;
       }
+      .card .lede {
+        margin: 0 0 16px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 15px;
+        line-height: 1.5;
+      }
       .card ul {
         margin: 0;
         padding-left: 22px;
@@ -128,6 +137,7 @@
         font-size: 15px;
         line-height: 1.7;
       }
+      .card ul strong { color: #fff; font-weight: 700; }
       .btn {
         display: block;
         width: 100%;
@@ -174,13 +184,12 @@
       <p class="subtitle">Klondike</p>
 
       <section class="card">
-        <h2>The classic, done right</h2>
+        <h2>Classic Klondike, done right</h2>
+        <p class="lede">A clean Solitaire game that opens fast, looks right, and stays out of the way.</p>
         <ul>
-          <li>Free, no ads in the way of the game</li>
-          <li>Unlimited undo, hint, and auto-complete</li>
-          <li>Draw 1 and Draw 3 modes</li>
-          <li>Solvable deals option</li>
-          <li>Share a deal with friends</li>
+          <li><strong>Solvable deals</strong> &mdash; every shuffle is winnable, no dead hands</li>
+          <li><strong>Draw 1 and Draw 3</strong> &mdash; easier or harder, switch anytime</li>
+          <li><strong>Compete with friends</strong> &mdash; share any deal by link and play the same shuffle</li>
         </ul>
       </section>
 
